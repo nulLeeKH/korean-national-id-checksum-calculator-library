@@ -28,8 +28,8 @@ SOFTWARE.
 #include "cKIDC.h"
 
 int main() {
-    printf("%ld", KIDC("111111", '3', "1111", '1'));
-    //Calculation of checksum for boys born on 11-Nov-2011 and registered first of the day in local code 1111
+    printf("%ld", KIDC("111111", '1', "1111", '1'));
+    //Calculation of checksum for male born on 11-Nov-1911 and registered first of the day in local code 1111
 
     return 0;
 }
