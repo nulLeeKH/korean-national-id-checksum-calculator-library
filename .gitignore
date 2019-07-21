@@ -2,4 +2,5 @@
 .idea/
 cmake-build-debug/
 CMakeLists.txt
-
+__pycache__/
+venv/
