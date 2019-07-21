@@ -14,3 +14,8 @@ A library that calculates the checksum of Korean resident registration numbers.
 
 - Improve calculating algorithm.
 - Add Python version.
+
+### v1.1.1-alpha
+
+- Modify name of python library.
+- Modify test code of python library.

@@ -25,9 +25,9 @@ SOFTWARE.
 """
 
 
-import cKIDC
+import pyKIDC
 
-print("%ld", cKIDC.KIDC(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+print(pyKIDC.KIDC(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
 # Calculation of checksum for male born on 11-Nov-1911 and registered first of the day in local code 1111
 
 """
