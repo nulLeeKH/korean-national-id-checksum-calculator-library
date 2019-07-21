@@ -1,4 +1,4 @@
-/*
+"""
 version : v1.1.0-alpha
 
 MIT License
@@ -22,22 +22,31 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
- */
+"""
 
-#include <stdio.h>
-#include "cKIDC.h"
 
-int main() {
-    printf("%d", KIDC(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
-    // Calculation of checksum for male born on 11-Nov-1911 and registered first of the day in local code 1111
+def KIDC(b0, b1, b2, b3, b4, b5, g, r0, r1, r2, r3, n):
+    s = b0 * 2
+    s += b1 * 3
+    s += b2 * 4
+    s += b3 * 5
+    s += b4 * 6
+    s += b5 * 7
 
-    /*
-    The first through sixth arguments contain the date of birth in the order of YY-MM-DD.
-    The seventh argument contains gender.
-        1900s being 1 (male), 2 (female), and 2000s being 3 (male) and 4 (female)
-    The eighth through eleventh argument contain the code of the area of birth and the code of registered office.
-    The twelfth argument contains registered number from office.
-    */
+    s += g * 8
 
-    return 0;
-}
+    s += r0 * 9
+    s += r1 * 2
+    s += r2 * 3
+    s += r3 * 4
+
+    s += n * 5
+
+    i = 0
+    while i <= s:
+        i += 11
+
+    return (i-s) % 10
+
+
+author = "nulLeeKH"
