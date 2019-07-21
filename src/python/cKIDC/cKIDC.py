@@ -1,4 +1,4 @@
-/*
+"""
 version : v1.1.0-alpha
 
 MIT License
@@ -22,33 +22,31 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
- */
+"""
 
-#include "cKIDC.h"
 
-#include <stdio.h>
-#include <stdlib.h>
+def KIDC(b0, b1, b2, b3, b4, b5, g, r0, r1, r2, r3, n):
+    s = b0 * 2
+    s += b1 * 3
+    s += b2 * 4
+    s += b3 * 5
+    s += b4 * 6
+    s += b5 * 7
 
-int KIDC(int b0, int b1, int b2, int b3, int b4, int b5, int g, int r0, int r1, int r2, int r3, int n) {
-    int s, i;
+    s += g * 8
 
-    s = b0 * 2;
-    s += b1 * 3;
-    s += b2 * 4;
-    s += b3 * 5;
-    s += b4 * 6;
-    s += b5 * 7;
+    s += r0 * 9
+    s += r1 * 2
+    s += r2 * 3
+    s += r3 * 4
 
-    s += g * 8;
+    s += n * 5
 
-    s += r0 * 9;
-    s += r1 * 2;
-    s += r2 * 3;
-    s += r3 * 4;
+    i = 0
+    while i <= s:
+        i += 11
 
-    s += n * 5;
+    return (i-s) % 10
 
-    for (i = 0; i <= s; i += 11);
 
-    return (i-s) % 10;
-}
+author = "nulLeeKH"

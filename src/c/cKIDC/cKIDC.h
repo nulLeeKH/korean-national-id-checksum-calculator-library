@@ -1,5 +1,5 @@
 /*
-version : v1.0.0-alpha
+version : v1.1.0-alpha
 
 MIT License
 
@@ -27,6 +27,6 @@ SOFTWARE.
 #ifndef KORID_CKIDC_H
 #define KORID_CKIDC_H
 
-long KIDC(char birth[6], char gender, char region[4], char regNo);
+int KIDC(int b0, int b1, int b2, int b3, int b4, int b5, int g, int r0, int r1, int r2, int r3, int n);
 
 #endif //KORID_CKIDC_H
