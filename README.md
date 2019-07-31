@@ -2,7 +2,7 @@
 
 ## About
 
-A library that calculates the checksum of Korean resident registration numbers.
+The library that calculates the checksum of Korean resident registration numbers.
 
 ## Patch Note
 
