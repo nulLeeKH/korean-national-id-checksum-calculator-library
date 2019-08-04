@@ -1,5 +1,5 @@
 /*
-version : v1.1.1-alpha
+version : v1.1.2-alpha
 
 MIT License
 
@@ -24,9 +24,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-#ifndef KORID_CKIDC_H
-#define KORID_CKIDC_H
+#ifndef CKIDC_H
+#define CKIDC_H
 
 int KIDC(int b0, int b1, int b2, int b3, int b4, int b5, int g, int r0, int r1, int r2, int r3, int n);
 
-#endif //KORID_CKIDC_H
+#endif //CKIDC_H
