@@ -11,3 +11,7 @@ The library that calculates the checksum of Korean resident registration numbers
 
 ### v1.1.1-alpha
 - Add examples.
+
+### v1.1.2-alpha
+- Normalize the version system.
+- Modify the library's include guard.
