@@ -1,5 +1,5 @@
 /*
-version : v1.1.0-alpha
+version : v1.1.1-alpha
 
 MIT License
 
@@ -24,20 +24,31 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-#include <stdio.h>
 #include "cKIDC.h"
 
-int main() {
-    printf("%d", KIDC(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
-    // Calculation of checksum for male born on 11-Nov-1911 and registered first of the day in local code 1111
+#include <stdio.h>
+#include <stdlib.h>
 
-    /*
-    The first through sixth arguments contain the date of birth in the order of YY-MM-DD.
-    The seventh argument contains gender.
-        1900s being 1 (male), 2 (female), and 2000s being 3 (male) and 4 (female)
-    The eighth through eleventh argument contain the code of the area of birth and the code of registered office.
-    The twelfth argument contains registered number from office.
-    */
+int KIDC(int b0, int b1, int b2, int b3, int b4, int b5, int g, int r0, int r1, int r2, int r3, int n) {
+    int s, i;
 
-    return 0;
+    s = b0 * 2;
+    s += b1 * 3;
+    s += b2 * 4;
+    s += b3 * 5;
+    s += b4 * 6;
+    s += b5 * 7;
+
+    s += g * 8;
+
+    s += r0 * 9;
+    s += r1 * 2;
+    s += r2 * 3;
+    s += r3 * 4;
+
+    s += n * 5;
+
+    for (i = 0; i <= s; i += 11);
+
+    return (i-s) % 10;
 }

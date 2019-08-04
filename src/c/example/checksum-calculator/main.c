@@ -24,31 +24,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-#include "cKIDC.h"
-
 #include <stdio.h>
 #include <stdlib.h>
+#include "cKIDC.h"
 
-int KIDC(int b0, int b1, int b2, int b3, int b4, int b5, int g, int r0, int r1, int r2, int r3, int n) {
-    int s, i;
+int main() {
+    int i=0, id[12];
+    char idTemp;
 
-    s = b0 * 2;
-    s += b1 * 3;
-    s += b2 * 4;
-    s += b3 * 5;
-    s += b4 * 6;
-    s += b5 * 7;
+    printf("Please enter the  national-id number except the last number.\n");
+    printf("national-id : ");
 
-    s += g * 8;
+    while (i<12){
+        scanf("%c", &idTemp);
+        if ('0'<=idTemp && idTemp<='9') {
+            id[i] = atoi(&idTemp);
+            i++;
+        }
+    }
 
-    s += r0 * 9;
-    s += r1 * 2;
-    s += r2 * 3;
-    s += r3 * 4;
+    printf("\n\n\n");
 
-    s += n * 5;
+    printf("Result : The checksum number is %d.", KIDC(id[0], id[1], id[2], id[3], id[4], id[5], id[6], id[7], id[8], id[9], id[10], id[11]));
 
-    for (i = 0; i <= s; i += 11);
-
-    return (i-s) % 10;
+    return 0;
 }
