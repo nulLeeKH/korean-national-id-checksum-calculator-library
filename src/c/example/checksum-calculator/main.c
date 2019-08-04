@@ -24,9 +24,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-#ifndef KORID_CKIDC_H
-#define KORID_CKIDC_H
+#include <stdio.h>
+#include <stdlib.h>
+#include "cKIDC.h"
 
-int KIDC(int b0, int b1, int b2, int b3, int b4, int b5, int g, int r0, int r1, int r2, int r3, int n);
+int main() {
+    int i=0, id[12];
+    char idTemp;
 
-#endif //KORID_CKIDC_H
+    printf("Please enter the  national-id number except the last number.\n");
+    printf("national-id : ");
+
+    while (i<12){
+        scanf("%c", &idTemp);
+        if ('0'<=idTemp && idTemp<='9') {
+            id[i] = atoi(&idTemp);
+            i++;
+        }
+    }
+
+    printf("\n\n\n");
+
+    printf("Result : The checksum number is %d.", KIDC(id[0], id[1], id[2], id[3], id[4], id[5], id[6], id[7], id[8], id[9], id[10], id[11]));
+
+    return 0;
+}

@@ -25,19 +25,32 @@ SOFTWARE.
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "cKIDC.h"
 
 int main() {
-    printf("%d", KIDC(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
-    // Calculation of checksum for male born on 11-Nov-1911 and registered first of the day in local code 1111
+    int i=0, id[13];
+    char idTemp;
 
-    /*
-    The first through sixth arguments contain the date of birth in the order of YY-MM-DD.
-    The seventh argument contains gender.
-        1900s being 1 (male), 2 (female), and 2000s being 3 (male) and 4 (female)
-    The eighth through eleventh argument contain the code of the area of birth and the code of registered office.
-    The twelfth argument contains registered number from office.
-    */
+    printf("Please enter the entire national-id number.\n");
+    printf("national-id : ");
 
-    return 0;
+    while (i<13){
+        scanf("%c", &idTemp);
+        if ('0'<=idTemp && idTemp<='9') {
+            id[i] = atoi(&idTemp);
+            i++;
+        }
+    }
+
+    printf("\n\n\n");
+
+    if (KIDC(id[0], id[1], id[2], id[3], id[4], id[5], id[6], id[7], id[8], id[9], id[10], id[11]) == id[12]) {
+        printf("Result : There is no problem with ID number.\n");
+        return (0);
+    }
+    else {
+        printf("Result : There is a problem with ID number.\n");
+        return (1);
+    }
 }
